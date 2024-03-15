@@ -1,21 +1,14 @@
-const numero = 2;
+const numero = 1;
 
-const NumeroPar = (numero % 2) === 0; //== ingnora o tipo e o === deve ser identico.
+const isNumeroPar = (numero % 2) === 0; //== ingnora o tipo e o === deve ser identico.
 
-console.log(NumeroPar);
+console.log(isNumeroPar);
 
-if (numero === 0)
-{
-    console.log('Numero Invalido!')
-}
-
-else if(NumeroPar)
+if(isNumeroPar)
 {
     console.log('O numero é Par.');
 }
-
 else
 {
     console.log('O numero é Impar.');
 }
-
