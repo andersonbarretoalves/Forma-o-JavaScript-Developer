@@ -16,8 +16,12 @@ function incrementarJurus(valor, percentualJuros)
     return valor + valorDeAcrecimo;
 }
 
-sayMyName('Anderson'); //funções que não retornão nada, é chamadas de procedimento.
-sayMyName('Ruan')
+function main()
+{
+    console.log('Programa Principal');
+
+    sayMyName('Anderson'); //funções que não retornão nada, é chamadas de procedimento.
+    sayMyName('Ruan')
 
 console.log('Valor de Quadrado de 10 + Quadrado de 10: ' + (quadrado(10) + quadrado(10)));
 const quadradoDeDez = quadrado(10);
@@ -25,3 +29,7 @@ console.log('Valor do Quadrado de 10: ' + quadradoDeDez);
 
 console.log('Valor do produto com 10% de jutos: ' + incrementarJurus(100, 10));
 console.log('Valor do produto com 15% de jutos: ' + incrementarJurus(100, 15));
+}
+
+main();
+
