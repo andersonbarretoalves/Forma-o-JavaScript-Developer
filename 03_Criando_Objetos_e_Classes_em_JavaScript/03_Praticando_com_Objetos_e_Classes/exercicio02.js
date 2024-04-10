@@ -16,13 +16,39 @@ class Pessoa {
         this.altura = altura; 
     }
 
-    calcularImc(peso, altura) {
-        return peso /(altura * altura);
+    calcularImc() {
+        return this.peso /(this.altura * this.altura);
+    }
+    classificarImc() {
+        const imc = this.calcularImc();
+
+        if (imc <= 18.5){
+            return ('Abaixo do Peso!');
+        }
+        else if (imc > 18.5 && imc <= 24.9) {
+            return ('Parabéns, Peso Ideal!');
+        }
+        else if (imc > 25.0 && imc <= 29.9) {
+            return ('Levemente acima do Peso!');
+        }
+        else if (imc > 30.0 && imc <= 34.9) {
+            return ('Obesidade grau I!');
+        }
+        else if (imc > 35.0 && imc <= 39.9) {
+            return ('Obesidade grau II! (Severa)');
+        }
+        else {
+            return ('Obesidade III! (Mórbida)');
+        }
     }
 }
 
-const jose = new Pessoa('José', 82, 1.65);
-
+const jose = new Pessoa('José', 70, 1.75);
 console.log(jose);
+console.log(jose.calcularImc().toFixed(2));
+console.log(jose.classificarImc());
 
-console.log(jose.calcularImc(82, 1.65).toFixed(2));
+const anderson = new Pessoa('Anderson', 82, 1.65)
+console.log(anderson);
+console.log(anderson.calcularImc().toFixed(2));
+console.log(anderson.classificarImc());
