@@ -2,17 +2,17 @@
 
 const notas = [];
 
-notas.push(5);
-notas.push(7);
+notas.push(10);
+notas.push(9);
 notas.push(8);
-notas.push(2);
-notas.push(5);
+notas.push(6);
 
-const soma = notas[0] + notas[1] + notas[2] + notas[3] + notas[4];
+let soma = 0;
 
-for (let index = 0; index < array.length; index++) {
-    
-    
+for (let i = 0; i < notas.length; i++) {
+        const nota = notas[i];
+        soma = soma + nota;
 }
 
-console.log(soma / 5);
+const media = soma / notas.length;
+console.log((media).toFixed(2));
