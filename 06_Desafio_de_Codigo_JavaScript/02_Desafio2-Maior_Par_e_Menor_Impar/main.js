@@ -18,21 +18,18 @@ Exempro:
 const {gets, print} = require('./funcoesAuxiliares');
 
 const n = gets();
-let maiorNumeroPar = 0;
-let menorNumeroImpar = 0;
+let maiorNumeroPar = null;
+let menorNumeroImpar = null;
 
 for (let i = 0; i < n; i++) {
     const numero = gets();
     if(numero % 2 === 0) {
-        if(numero > maiorNumeroPar) {
+        if (maiorNumeroPar === null || numero > maiorNumeroPar) {
             maiorNumeroPar = numero;
         }
     }
     else {
-        if(menorNumeroImpar === 0) {
-            menorNumeroImpar = numero;
-        }
-        else if (numero < menorNumeroImpar){
+        if(menorNumeroImpar === null || numero < menorNumeroImpar) {
             menorNumeroImpar = numero;
         }
     }        
