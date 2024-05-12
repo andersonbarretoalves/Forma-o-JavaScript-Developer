@@ -21,14 +21,14 @@ Para calcular o percentual de imposto segue as aliquotas:
 
 const {gets, print} = require('./funcoesAuxiliares');
 
-const valorDoSalario = gets();
+const salarioBruto = gets();
 const valorBeneficio = gets();
 
 function calculandoPorcentagem(valor, percentual) {
     return valor * (percentual / 100);
 }
  
-function percentualImpostoComBaseNoSalario(salario) {
+function pegarAlicota(salario) {
     if (salario >= 0 && salario < 1100) {
     return 5;    
     }
@@ -40,7 +40,9 @@ function percentualImpostoComBaseNoSalario(salario) {
     }
 }
 
-valorDeduzido = valorDoSalario - calculandoPorcentagem(percentualImpostoComBaseNoSalario());
-valorTotal = valorDeduzido + valorBeneficio;
-print('Valor do salário para transferência: ' + valorTotal);
+const aliquotaImposto = pegarAlicota(salarioBruto);
+ValorImposto = calculandoPorcentagem(salarioBruto, aliquotaImposto);
+const valorATransferir = salarioBruto - ValorImposto + valorBeneficio;
+
+print('Valor do salário para transferência: ' + valorATransferir);
 
