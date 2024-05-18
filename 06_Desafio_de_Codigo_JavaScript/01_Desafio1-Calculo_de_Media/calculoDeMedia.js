@@ -24,3 +24,4 @@ if (media < 5){
      else{
         print('Média: ' + media.toFixed(2) + ', Aluno Aprovado!');
      }
+     
